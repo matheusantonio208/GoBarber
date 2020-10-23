@@ -30,6 +30,13 @@ class ScheduleController {
             endOfDay(parsedDate).toUTCString(),
           ],
         },
+        include: [
+          {
+            model: User,
+            as: 'user',
+            attributes: ['name'],
+          },
+        ],
       },
       order: ['date'],
     });
